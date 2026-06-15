@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mariana Jiménez — Multilingual Learning Programs Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:        #1B6B6B;
+    --teal-mid:    #2A8F8F;
+    --teal-light:  #D6EEEE;
+    --teal-pale:   #F0FAFA;
+    --sage:        #3D7A57;
+    --sage-mid:    #4E9468;
+    --sage-light:  #E6F2EC;
+    --sage-pale:   #F3FAF6;
+    --terra:       #C45C2E;
+    --terra-light: #FAF0EB;
+    --gold:        #C8960A;
+    --gold-light:  #FDF6E3;
+    --plum:        #6B3FA0;
+    --plum-light:  #F2ECF9;
+    --amber:       #D4820A;
+    --amber-light: #FEF3E2;
+    --rust:        #B85C38;
+    --forest:      #2D5A3D;
+    --charcoal:    #1A1A1A;
+    --mid:         #4A4A4A;
+    --muted:       #717171;
+    --rule:        #E0E0E0;
+    --rule-light:  #F0F0EE;
+    --bg:          #FAFAF8;
+    --white:       #FFFFFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--charcoal);
+    line-height: 1.6;
+    font-size: 14px;
+  }
+
+  /* ── GLOBAL HEADER ───────────────────────────────────────── */
+  .global-header {
+    background: var(--teal);
+    padding: 28px 48px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .global-header::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: var(--gold);
+  }
+  .global-header::after {
+    content: '';
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+  .header-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
+  .header-sub {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.72);
+    margin-top: 4px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+  }
+  .header-label {
+    position: absolute;
+    right: 48px; top: 28px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .header-contact {
+    position: absolute;
+    right: 48px; bottom: 20px;
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.55);
+  }
+
+  /* ── PAGE WRAPPER ─────────────────────────────────────────── */
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 0 60px;
+  }
+
+  /* ── PROJECT BAND ─────────────────────────────────────────── */
+  .project-band {
+    padding: 18px 48px 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--rule);
+    margin-top: 52px;
+  }
+  .project-band.teal-band  { background: var(--teal-pale); }
+  .project-band.sage-band  { background: var(--sage-pale); }
+  .project-band.plum-band  { background: var(--plum-light); }
+  .project-band.gold-band  { background: var(--gold-light); }
+  .project-band:first-of-type { margin-top: 0; }
+
+  .project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.45rem;
+    font-weight: 700;
+  }
+  .teal-band .project-title { color: var(--teal); }
+  .sage-band .project-title { color: var(--sage); }
+  .plum-band .project-title { color: var(--plum); }
+  .gold-band .project-title { color: var(--amber); }
+
+  .project-meta {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ── SECTION DIVIDER ─────────────────────────────────────── */
+  .section-divider {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 22px 48px 6px;
+  }
+  .section-divider span {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── CONTENT BLOCK ───────────────────────────────────────── */
+  .content-block {
+    padding: 0 48px;
+    margin-top: 16px;
+  }
+
+  /* ── MISSION TEXT ────────────────────────────────────────── */
+  .mission-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--mid);
+    max-width: 820px;
+  }
+  .mission-text strong { font-weight: 600; }
+  .mission-text.teal strong  { color: var(--teal); }
+  .mission-text.sage strong  { color: var(--sage); }
+  .mission-text.plum strong  { color: var(--plum); }
+  .mission-text.amber strong { color: var(--amber); }
+
+  /* ── PILLS ───────────────────────────────────────────────── */
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .pill.teal   { background: var(--teal);   color: var(--white); }
+  .pill.sage   { background: var(--sage);   color: var(--white); }
+  .pill.plum   { background: var(--plum);   color: var(--white); }
+  .pill.amber  { background: var(--amber);  color: var(--white); }
+  .pill.forest { background: var(--forest); color: var(--white); }
+  .pill.terra  { background: var(--terra);  color: var(--white); }
+  .pill.rust   { background: var(--rust);   color: var(--white); }
+  .pill.outline-teal {
+    background: transparent;
+    border: 1.5px solid var(--teal);
+    color: var(--teal);
+  }
+  .pill.outline-plum {
+    background: transparent;
+    border: 1.5px solid var(--plum);
+    color: var(--plum);
+  }
+
+  /* ── FEATURE LIST ─────────────────────────────────────────── */
+  .feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .feature-list li::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .dot-teal li::before  { background: var(--teal); }
+  .dot-sage li::before  { background: var(--sage); }
+  .dot-plum li::before  { background: var(--plum); }
+  .dot-amber li::before { background: var(--amber); }
+
+  /* ── CALLOUT BOX ─────────────────────────────────────────── */
+  .callout {
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-top: 20px;
+    border-left: 4px solid;
+  }
+  .callout.teal  { background: var(--teal-light);  border-color: var(--teal); }
+  .callout.sage  { background: var(--sage-light);  border-color: var(--sage); }
+  .callout.plum  { background: var(--plum-light);  border-color: var(--plum); }
+  .callout.gold  { background: var(--gold-light);  border-color: var(--gold); }
+  .callout.terra { background: var(--terra-light); border-color: var(--terra); }
+  .callout-label {
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 7px;
+  }
+  .callout.teal  .callout-label { color: var(--teal); }
+  .callout.sage  .callout-label { color: var(--sage); }
+  .callout.plum  .callout-label { color: var(--plum); }
+  .callout.gold  .callout-label { color: var(--amber); }
+  .callout.terra .callout-label { color: var(--terra); }
+  .callout p {
+    font-size: 0.85rem;
+    color: var(--mid);
+    line-height: 1.65;
+    margin-top: 4px;
+  }
+
+  /* ── TWO / THREE COL ─────────────────────────────────────── */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 16px;
+  }
+  .three-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  /* ── IMPACT STAT CARDS ───────────────────────────────────── */
+  .stat-card {
+    border-radius: 8px;
+    padding: 18px 20px;
+    border: 1px solid var(--rule);
+    background: var(--white);
+    text-align: center;
+  }
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-label {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .stat-card.teal .stat-number  { color: var(--teal); }
+  .stat-card.sage .stat-number  { color: var(--sage); }
+  .stat-card.plum .stat-number  { color: var(--plum); }
+  .stat-card.amber .stat-number { color: var(--amber); }
+
+  /* ── UNIT TABLE ──────────────────────────────────────────── */
+  .unit-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    margin-top: 12px;
+  }
+  .unit-table th {
+    background: var(--sage);
+    color: var(--white);
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .unit-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--mid);
+    vertical-align: top;
+  }
+  .unit-table tr:nth-child(even) td { background: var(--sage-pale); }
+  .unit-table tr td:first-child { font-weight: 600; color: var(--sage); }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.68rem;
+    font-weight: 600;
+  }
+  .badge.complete { background: var(--sage-light); color: var(--sage); }
+  .badge.inprog   { background: var(--gold-light); color: var(--amber); }
+  .badge.planned  { background: var(--rule); color: var(--muted); }
+
+  /* ── PHASE TIMELINE ──────────────────────────────────────── */
+  .phase-row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .phase-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    border-radius: 7px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+  .phase-label {
+    padding: 10px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .phase-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+  }
+  .phase-tag {
+    font-size: 0.66rem;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+  }
+  .phase-body {
+    padding: 10px 14px;
+    background: var(--white);
+    font-size: 0.83rem;
+    color: var(--mid);
+    line-height: 1.5;
+  }
+  .ph-research  { background: var(--teal); }
+  .ph-design    { background: var(--sage); }
+  .ph-community { background: var(--plum); }
+  .ph-evidence  { background: var(--amber); }
+  .ph-scale     { background: var(--forest); }
+
+  /* ── PRESENTATION CARD ───────────────────────────────────── */
+  .pres-card {
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    background: var(--white);
+  }
+  .pres-card-header {
+    background: var(--plum);
+    padding: 14px 20px;
+    color: var(--white);
+  }
+  .pres-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .pres-card-venue {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.72);
+    margin-top: 4px;
+  }
+  .pres-card-body {
+    padding: 16px 20px;
+    font-size: 0.84rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  /* ── ARTICLE CARD ────────────────────────────────────────── */
+  .article-card {
+    border-radius: 8px;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    background: var(--white);
+  }
+  .article-card-header {
+    background: var(--amber);
+    padding: 14px 20px;
+    color: var(--white);
+  }
+  .article-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .article-card-venue {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.78);
+    margin-top: 4px;
+  }
+  .article-card-body {
+    padding: 16px 20px;
+    font-size: 0.84rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  /* ── KEY ARGUMENT ROW ────────────────────────────────────── */
+  .argument-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .argument-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .argument-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--amber);
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .argument-text {
+    font-family: 'Source Serif 4', serif;
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+  .argument-text strong { color: var(--charcoal); font-weight: 600; }
+
+  /* ── FOOTER ──────────────────────────────────────────────── */
+  .portfolio-footer {
+    margin-top: 56px;
+    padding: 22px 48px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .footer-left  { font-size: 0.75rem; color: var(--muted); }
+  .footer-right {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { opacity: 0; animation: fadeUp 0.5s ease forwards; }
+  .fade-up:nth-child(1) { animation-delay: 0.05s; }
+  .fade-up:nth-child(2) { animation-delay: 0.12s; }
+  .fade-up:nth-child(3) { animation-delay: 0.19s; }
+  .fade-up:nth-child(4) { animation-delay: 0.26s; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════════════════════════════════════════════════════
+     GLOBAL HEADER
+═══════════════════════════════════════════════════════ -->
+<div class="global-header">
+  <div class="header-name">Mariana Jiménez, M.Ed.</div>
+  <div class="header-sub">Bilingual Educator · Curriculum Developer · Research-to-Practice Specialist</div>
+  <div class="header-label">Curriculum &amp; Programs Portfolio</div>
+  <div class="header-contact">jimenez_m90@outlook.com &nbsp;·&nbsp; (210) 606-1707 &nbsp;·&nbsp; biliteracybridge.softr.app</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PORTFOLIO INTRO
+═══════════════════════════════════════════════════════ -->
+<div class="section-divider" style="margin-top:28px;"><span style="color:var(--teal)">About This Portfolio</span></div>
+<div class="content-block">
+  <p class="mission-text teal">
+    This portfolio documents four active projects that collectively demonstrate <strong>curriculum development, community-centered research, thought leadership, and evidence-generation</strong> — the core competencies of a Multilingual Learning Programs Lead. Each project sits at the intersection of language education, technology, and community impact, and each reflects a practitioner's commitment to turning research into real-world outcomes for multilingual learners and the educators who serve them.
+  </p>
+  <div class="pill-row">
+    <span class="pill teal">Bilingual/Multilingual Education</span>
+    <span class="pill sage">Translanguaging Pedagogy</span>
+    <span class="pill plum">Thought Leadership</span>
+    <span class="pill amber">Research-to-Practice</span>
+    <span class="pill forest">Culturally Responsive Curriculum</span>
+    <span class="pill terra">Community Impact</span>
+    <span class="pill rust">Grant-Adjacent Scholarship</span>
+    <span class="pill outline-teal">ACTFL · TEKS · CEFR Aligned</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PROJECT 1 — RAÍCES
+═══════════════════════════════════════════════════════ -->
+<div class="project-band sage-band">
+  <div class="project-title">Raíces: Rooted in Culture, Rising in Language</div>
+  <div class="project-meta">Ph.D. Doctoral Research · Texas Tech University · SLAR Grade 4 Biliteracy Curriculum · 2026–Present</div>
+</div>
+
+<div class="section-divider"><span style="color:var(--sage)">Project Overview</span></div>
+<div class="content-block">
+  <p class="mission-text sage">
+    Raíces is an original, identity-centered biliteracy curriculum for Grade 4 dual language classrooms in South Texas — developed as doctoral research in Curriculum & Instruction: Language, Diversity & Literacy Studies at Texas Tech University. It is designed to <strong>center the linguistic and cultural identities of Mexican American and multilingual learners</strong> while building rigorous, TEKS-aligned Spanish language arts skills. Every unit integrates explicit language objectives, translanguaging supports, and formative assessment — grounding practitioner design in scholarly inquiry.
+  </p>
+  <div class="pill-row">
+    <span class="pill sage">TEKS Chapter 128</span>
+    <span class="pill teal">ACTFL Aligned</span>
+    <span class="pill forest">CEFR A1–B1</span>
+    <span class="pill amber">Identity-Centered Design</span>
+    <span class="pill plum">Translanguaging</span>
+    <span class="pill terra">Doctoral Research</span>
+  </div>
+</div>
+
+<div class="section-divider"><span style="color:var(--sage)">Scope &amp; Development Status</span></div>
+<div class="content-block">
+  <table class="unit-table">
+    <thead>
+      <tr>
+        <th>Unit</th>
+        <th>Title (Español)</th>
+        <th>Central Theme</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Unidad 1</td>
+        <td>Mi Lengua, Mi Identidad</td>
+        <td>Language identity, bilingualism as asset, community voice</td>
+        <td><span class="badge complete">Semana 1 Complete</span></td>
+      </tr>
+      <tr>
+        <td>Unidad 2</td>
+        <td>Mis Raíces, Mi Historia</td>
+        <td>Family history, intergenerational memory, oral tradition</td>
+        <td><span class="badge inprog">In Development</span></td>
+      </tr>
+      <tr>
+        <td>Unidad 3</td>
+        <td>Mi Comunidad, Mi Mundo</td>
+        <td>Community systems, advocacy, civic participation</td>
+        <td><span class="badge planned">Planned</span></td>
+      </tr>
+      <tr>
+        <td>Unidad 4</td>
+        <td>La Naturaleza Nos Habla</td>
+        <td>Environment, science literacy in Spanish, land stewardship</td>
+        <td><span class="badge planned">Planned</span></td>
+      </tr>
+      <tr>
+        <td>Unidad 5</td>
+        <td>Creadores de Cambio</td>
+        <td>Changemakers, problem-solving, social entrepreneurship</td>
+        <td><span class="badge planned">Planned</span></td>
+      </tr>
+      <tr>
+        <td>Unidad 6</td>
+        <td>Voces que Perduran</td>
+        <td>Literature, author's craft, legacy and cultural preservation</td>
+        <td><span class="badge planned">Planned</span></td>
+      </tr>
+      <tr>
+        <td>Unidad 7</td>
+        <td>Somos el Futuro</td>
+        <td>Identity synthesis, biliteracy goals, future self-authoring</td>
+        <td><span class="badge planned">Planned</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="section-divider"><span style="color:var(--sage)">Lesson Architecture — 5-Step Micro-Framework</span></div>
+<div class="content-block">
+  <div class="phase-row">
+    <div class="phase-item">
+      <div class="phase-label ph-research"><div class="phase-name">Conectar</div><div class="phase-tag">10 min</div></div>
+      <div class="phase-body"><strong style="color:var(--sage)">Activate prior knowledge and cultural connection.</strong> Students connect the day's theme to lived experience through a culturally grounded provocation — honoring home language, family stories, and community knowledge as academic assets.</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-label ph-design"><div class="phase-name">Caja de Herramientas</div><div class="phase-tag">10 min</div></div>
+      <div class="phase-body"><strong style="color:var(--sage)">Language tools and metalinguistic focus.</strong> Explicit language objective introduced with function label (Narrar · Clasificar · Sintetizar). Sentence plantillas modeled by teacher. Vocabulary is discovered in context through <em>El Partido</em> — not pre-taught.</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-label ph-community"><div class="phase-name">Explorar</div><div class="phase-tag">20 min</div></div>
+      <div class="phase-body"><strong style="color:var(--sage)">Deep engagement with anchor text and content.</strong> Structured reading, listening (TEKS 4.1A audio integration), and discussion tasks. Tiered questioning scaffolds access for emergent bilinguals and SpEd students without reducing rigor.</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-label ph-evidence"><div class="phase-name">Crear</div><div class="phase-tag">15 min</div></div>
+      <div class="phase-body"><strong style="color:var(--sage)">Language production with purpose.</strong> Students use plantillas and lesson vocabulary to produce original written or oral text. Translanguaging is strategically planned — not permissive code-switching — with explicit ACTFL proficiency goals.</div>
+    </div>
+    <div class="phase-item">
+      <div class="phase-label ph-scale"><div class="phase-name">Compartir</div><div class="phase-tag">5 min</div></div>
+      <div class="phase-body"><strong style="color:var(--sage)">Community knowledge-building and formative assessment.</strong> Students share with partners or class; teacher conducts an exit observation protocol. Data informs next-day differentiation without adding grading load.</div>
+    </div>
+  </div>
+</div>
+
+<div class="content-block">
+  <div class="callout sage">
+    <div class="callout-label">Relevance to Multilingual Learning Programs Lead</div>
+    <p>Raíces demonstrates the end-to-end program development capacity this role requires: designing curriculum from research base to classroom-ready materials, building evidence-generation structures (formative assessment, observation protocols) into the program itself, and centering community and cultural identity as a non-negotiable program value. The doctoral research context means every design decision is documented, defensible, and tied to the scholarly literature — the foundation for grant reporting and impact communication. The 7-unit scope and multi-year development timeline reflect exactly the kind of complex, multi-stakeholder initiative this role manages.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PROJECT 2 — BILITERACY BRIDGE LIBRARY
+═══════════════════════════════════════════════════════ -->
+<div class="project-band teal-band">
+  <div class="project-title">Biliteracy Bridge Library</div>
+  <div class="project-meta">Live Digital Tool · Ed Tech Para Todos · biliteracybridge.softr.app · 2025–Present</div>
+</div>
+
+<div class="section-divider"><span style="color:var(--teal)">Project Overview</span></div>
+<div class="content-block">
+  <p class="mission-text teal">
+    The Biliteracy Bridge Library is a <strong>free, educator-facing digital platform</strong> that enables K–8 bilingual and dual language teachers to discover, filter, and deploy bilingual and bicultural texts — with full instructional scaffolding built into every entry. It was designed in direct response to a gap identified through years of classroom practice: educators who wanted to use culturally sustaining texts could not efficiently find resources that were <strong>level-appropriate, thematically aligned, and instructionally ready</strong> without hours of individual research.
+  </p>
+  <div class="pill-row">
+    <span class="pill teal">EdTech Tool</span>
+    <span class="pill sage">Educator-Facing</span>
+    <span class="pill forest">Bilingual &amp; Bicultural Texts</span>
+    <span class="pill amber">Community Impact</span>
+    <span class="pill plum">Open Access</span>
+    <span class="pill outline-teal">Softr.io · Airtable</span>
+  </div>
+</div>
+
+<div class="section-divider"><span style="color:var(--teal)">What Each Entry Includes</span></div>
+<div class="content-block">
+  <div class="two-col">
+    <ul class="feature-list dot-teal">
+      <li><strong>Language Objectives</strong> — ACTFL-aligned productive and receptive objectives mapped to each text</li>
+      <li><strong>Biliteracy Skill Focus</strong> — cross-linguistic transfer opportunities explicitly identified</li>
+      <li><strong>Teacher Lens Notes</strong> — cultural specificity guidance and potential classroom sensitivities flagged</li>
+      <li><strong>Translanguaging Supports</strong> — strategically planned language bridging activities</li>
+    </ul>
+    <ul class="feature-list dot-teal">
+      <li><strong>Writing Extensions</strong> — cross-linguistic composition prompts tied to each text's themes</li>
+      <li><strong>Filter System</strong> — searchable by theme, genre, language, age group, and biliteracy level</li>
+      <li><strong>Heritage Language Tag</strong> — texts that center heritage language maintenance are flagged separately</li>
+      <li><strong>Cultural Community Tag</strong> — entries organized by represented community for intentional selection</li>
+    </ul>
+  </div>
+</div>
+
+<div class="section-divider"><span style="color:var(--teal)">Program Impact &amp; Scale</span></div>
+<div class="content-block">
+  <div class="three-col">
+    <div class="stat-card teal fade-up">
+      <div class="stat-number">K–8</div>
+      <div class="stat-label">Grade bands served across dual language and bilingual classrooms</div>
+    </div>
+    <div class="stat-card sage fade-up">
+      <div class="stat-number">Free</div>
+      <div class="stat-label">Open-access tool — no paywall, no login required for core browsing</div>
+    </div>
+    <div class="stat-card amber fade-up">
+      <div class="stat-number">Texas+</div>
+      <div class="stat-label">Designed for South Texas educators; accessible nationally</div>
+    </div>
+  </div>
+</div>
+
+<div class="content-block">
+  <div class="callout teal">
+    <div class="callout-label">Relevance to Multilingual Learning Programs Lead</div>
+    <p>The Biliteracy Bridge Library is evidence of independent program ideation, product development, and community-facing implementation — all core functions of this role. It required identifying a real gap in the multilingual education ecosystem, translating that gap into a navigable digital solution, and building it with educators as the end user. The tool also reflects the capacity to create thought leadership and market development materials: each entry is itself a piece of curated, educator-facing content. Expanding this library — with grant support, partnership with community organizations and libraries, and integration of Indigenous language resources — maps directly to the scope of the Multilingual Learning Programs Lead role.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PROJECT 3 — SAAABE PRESENTATION
+═══════════════════════════════════════════════════════ -->
+<div class="project-band plum-band">
+  <div class="project-title">Translanguaging with Purpose</div>
+  <div class="project-meta">Conference Presentation · SAAABE · San Antonio, TX · 2026</div>
+</div>
+
+<div class="section-divider"><span style="color:var(--plum)">Presentation Overview</span></div>
+<div class="content-block">
+  <div class="pres-card">
+    <div class="pres-card-header">
+      <div class="pres-card-title">Translanguaging as Instructional Strategy: Bridging Research and Practice for Multilingual Learners</div>
+      <div class="pres-card-venue">San Antonio Association for Bilingual Education (SAAABE) · San Antonio, Texas · 2026</div>
+    </div>
+    <div class="pres-card-body">
+      <p>This practitioner-research presentation challenged the field's tendency to treat translanguaging as permissive code-switching — and reframed it as a <strong>strategically planned instructional move</strong> explicitly tied to ACTFL proficiency goals. Drawing on classroom evidence from dual language practice and doctoral research, the presentation modeled how translanguaging can be embedded into lesson architecture without undermining Spanish language development targets.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><span style="color:var(--plum)">Core Arguments Presented</span></div>
+<div class="content-block">
+  <div class="argument-list">
+    <div class="argument-item">
+      <div class="argument-num">1</div>
+      <div class="argument-text"><strong>Translanguaging is not the absence of boundaries</strong> — it is the deliberate, research-grounded use of a student's full linguistic repertoire in service of a specific proficiency goal. Without a language objective, it is not translanguaging pedagogy.</div>
+    </div>
+    <div class="argument-item">
+      <div class="argument-num">2</div>
+      <div class="argument-text"><strong>Strategic translanguaging must be planned at the lesson level</strong> — embedded into the lesson architecture, not added as an accommodation. The Raíces micro-framework shows what this looks like in practice: each Crear task specifies when, why, and how cross-linguistic production is invited.</div>
+    </div>
+    <div class="argument-item">
+      <div class="argument-num">3</div>
+      <div class="argument-text"><strong>Translanguaging and biliteracy are complementary, not competing</strong> — honoring a student's full linguistic identity strengthens, rather than undermines, their development of academic Spanish. Evidence from the Biliteracy Bridge Library text selection process supports this claim.</div>
+    </div>
+  </div>
+</div>
+
+<div class="content-block">
+  <div class="callout plum">
+    <div class="callout-label">Relevance to Multilingual Learning Programs Lead</div>
+    <p>This presentation is direct evidence of the thought leadership and community engagement dimensions of this role — presenting research to a practitioner audience, translating scholarly concepts into actionable classroom tools, and building organizational visibility in the multilingual education space. SAAABE represents the exact community-of-practice network a Multilingual Learning Programs Lead cultivates: bilingual educators, school leaders, and community advocates working at the intersection of language, culture, and equity. The presentation was also a proof point for the kind of partner-facing communication and materials this role requires: clear, evidence-grounded, and practitioner-accessible.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PROJECT 4 — JMER ARTICLE
+═══════════════════════════════════════════════════════ -->
+<div class="project-band gold-band">
+  <div class="project-title">Teaching Across Borders</div>
+  <div class="project-meta">Practitioner Narrative · Journal of Multilingual Education Research · Vol. 15: Voices from the Field · In Preparation · Abstract Due June 30, 2026</div>
+</div>
+
+<div class="section-divider"><span style="color:var(--amber)">Article Overview</span></div>
+<div class="content-block">
+  <div class="article-card">
+    <div class="article-card-header">
+      <div class="article-card-title">"Teaching Across Borders: One Educator's Response to Anti-Immigrant Rhetoric"</div>
+      <div class="article-card-venue">Journal of Multilingual Education Research (JMER), Vol. 15 · "Voices from the Field" · Practitioner Narrative</div>
+    </div>
+    <div class="article-card-body">
+      <p>This practitioner narrative documents a classroom response to rising anti-immigrant rhetoric in South Texas — centering the story of a Venezuelan-born student whose cultural identity was being erased in the name of assimilation. The piece resists the flattening of immigrant identities under generalized "Latino" frameworks and argues for <strong>pedagogical practices that honor the cultural specificity of each student's origin, language, and lived experience</strong>. It is grounded in three years of classroom practice and one year of doctoral scholarship.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><span style="color:var(--amber)">Three Core Pedagogical Practices</span></div>
+<div class="content-block">
+  <div class="argument-list">
+    <div class="argument-item">
+      <div class="argument-num" style="background:var(--amber)">1</div>
+      <div class="argument-text"><strong>Explicit Academic Language Instruction</strong> — teaching the linguistic forms that immigrant students need to access academic content and assert their identities in academic settings, without replacing home language or cultural practice.</div>
+    </div>
+    <div class="argument-item">
+      <div class="argument-num" style="background:var(--amber)">2</div>
+      <div class="argument-text"><strong>Curriculum Redesign Centering Immigrant Narratives</strong> — replacing or supplementing materials that render immigrant students invisible with texts and tasks that position immigrant experience as intellectually rich, academically rigorous, and worthy of scholarly attention.</div>
+    </div>
+    <div class="argument-item">
+      <div class="argument-num" style="background:var(--amber)">3</div>
+      <div class="argument-text"><strong>Strategically Planned Translanguaging Tied to ACTFL Proficiency Goals</strong> — not as permission to code-switch, but as a deliberate instructional move that honors students' full linguistic repertoire while building toward documented proficiency milestones.</div>
+    </div>
+  </div>
+</div>
+
+<div class="content-block">
+  <div class="callout gold">
+    <div class="callout-label">Relevance to Multilingual Learning Programs Lead</div>
+    <p>This piece is evidence of the scholarly writing, evidence-generation, and community advocacy capacities this role requires. A Multilingual Learning Programs Lead writes grant narratives, research summaries, case studies, and thought leadership pieces — all of which require the ability to translate practitioner experience into compelling, evidence-grounded prose for multiple audiences. This article does exactly that: it speaks to the research community through JMER's peer-reviewed venue, while centering a real student's story as the organizing evidence. It also demonstrates the equity-forward stance and community-impact orientation that defines this organization's mission. The abstract-to-publication timeline maps directly to the grant development and reporting cycles this role manages.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<div class="portfolio-footer">
+  <div class="footer-left">Mariana Jiménez, M.Ed. &nbsp;·&nbsp; jimenez_m90@outlook.com &nbsp;·&nbsp; (210) 606-1707 &nbsp;·&nbsp; biliteracybridge.softr.app</div>
+  <div class="footer-right">Ed Tech Para Todos &nbsp;·&nbsp; Ph.D. Doctoral Research, Texas Tech University &nbsp;·&nbsp; 2026</div>
+</div>
+
+</div><!-- /.page -->
+</body>
+</html>
