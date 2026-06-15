@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raíces — Mariana Jiménez Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal:#1B6B6B;--teal-mid:#2A8F8F;--teal-light:#D6EEEE;--teal-pale:#F0FAFA;
+    --sage:#3D7A57;--sage-mid:#4E9468;--sage-light:#E6F2EC;--sage-pale:#F3FAF6;
+    --terra:#C45C2E;--terra-light:#FAF0EB;--gold:#C8960A;--gold-light:#FDF6E3;
+    --plum:#6B3FA0;--plum-light:#F2ECF9;--amber:#D4820A;--amber-light:#FEF3E2;
+    --rust:#B85C38;--forest:#2D5A3D;--charcoal:#1A1A1A;--mid:#4A4A4A;
+    --muted:#717171;--rule:#E0E0E0;--rule-light:#F0F0EE;--bg:#FAFAF8;--white:#FFFFFF;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--charcoal);line-height:1.6;font-size:14px;}
+  .nav{background:var(--sage);padding:10px 48px;display:flex;align-items:center;gap:12px;}
+  .nav a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.78rem;font-weight:600;letter-spacing:0.04em;}
+  .nav a:hover{color:var(--white);}
+  .nav-sep{color:rgba(255,255,255,0.35);font-size:0.9rem;}
+  .nav-current{color:var(--white);font-size:0.78rem;font-weight:600;}
+  .hero{background:var(--sage);padding:36px 48px 30px;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--gold);}
+  .hero::after{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,0.04);}
+  .hero-tag{font-size:0.65rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:8px;}
+  .hero-title{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--white);line-height:1.15;}
+  .hero-sub{font-size:0.85rem;color:rgba(255,255,255,0.65);margin-top:6px;font-weight:300;}
+  .page{max-width:960px;margin:0 auto;padding:0 0 60px;}
+  .section-divider{display:flex;align-items:center;gap:10px;padding:28px 48px 6px;}
+  .section-divider span{font-size:0.68rem;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;white-space:nowrap;}
+  .section-divider::after{content:'';flex:1;height:1px;background:var(--rule);}
+  .content-block{padding:0 48px;margin-top:16px;}
+  .mission-text{font-family:'Source Serif 4',serif;font-size:0.95rem;line-height:1.8;color:var(--mid);max-width:820px;}
+  .mission-text strong{color:var(--sage);font-weight:600;}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+  .pill{display:inline-flex;align-items:center;padding:5px 13px;border-radius:20px;font-size:0.72rem;font-weight:600;letter-spacing:0.02em;}
+  .pill.teal{background:var(--teal);color:var(--white);}
+  .pill.sage{background:var(--sage);color:var(--white);}
+  .pill.amber{background:var(--amber);color:var(--white);}
+  .pill.plum{background:var(--plum);color:var(--white);}
+  .pill.forest{background:var(--forest);color:var(--white);}
+  .pill.terra{background:var(--terra);color:var(--white);}
+  .pill.outline-sage{background:transparent;border:1.5px solid var(--sage);color:var(--sage);}
+  .unit-table{width:100%;border-collapse:collapse;font-size:0.82rem;margin-top:12px;}
+  .unit-table th{background:var(--sage);color:var(--white);padding:8px 12px;text-align:left;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;font-weight:600;}
+  .unit-table td{padding:8px 12px;border-bottom:1px solid var(--rule);color:var(--mid);vertical-align:top;}
+  .unit-table tr:nth-child(even) td{background:var(--sage-pale);}
+  .unit-table tr td:first-child{font-weight:600;color:var(--sage);}
+  .badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:0.68rem;font-weight:600;}
+  .badge.complete{background:var(--sage-light);color:var(--sage);}
+  .badge.inprog{background:var(--gold-light);color:var(--amber);}
+  .badge.planned{background:var(--rule);color:var(--muted);}
+  .phase-row{display:flex;flex-direction:column;gap:10px;margin-top:12px;}
+  .phase-item{display:grid;grid-template-columns:140px 1fr;border-radius:7px;overflow:hidden;border:1px solid var(--rule);}
+  .phase-label{padding:10px 14px;display:flex;flex-direction:column;justify-content:center;}
+  .phase-name{font-size:0.82rem;font-weight:700;color:var(--white);line-height:1.2;}
+  .phase-tag{font-size:0.66rem;color:rgba(255,255,255,0.72);margin-top:2px;}
+  .phase-body{padding:12px 16px;background:var(--white);font-size:0.83rem;color:var(--mid);line-height:1.55;}
+  .phase-body strong{color:var(--sage);}
+  .ph1{background:var(--sage);}
+  .ph2{background:var(--amber);}
+  .ph3{background:var(--forest);}
+  .ph4{background:var(--teal);}
+  .ph5{background:var(--rust);}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px;}
+  .feature-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .feature-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.84rem;color:var(--mid);line-height:1.5;}
+  .feature-list li::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+  .dot-sage li::before{background:var(--sage);}
+  .dot-plum li::before{background:var(--plum);}
+  .lesson-snapshot{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px;}
+  .lesson-card{border-radius:8px;border:1px solid var(--rule);overflow:hidden;}
+  .lesson-card-header{padding:10px 14px;color:var(--white);font-size:0.78rem;font-weight:600;}
+  .lh-l1{background:var(--teal);}
+  .lh-l2{background:var(--sage);}
+  .lh-l3{background:var(--terra);}
+  .lesson-card-body{padding:12px 14px;background:var(--white);font-size:0.8rem;color:var(--mid);line-height:1.55;}
+  .lesson-card-body strong{display:block;font-size:0.67rem;font-weight:600;color:var(--charcoal);letter-spacing:0.06em;text-transform:uppercase;margin-top:8px;margin-bottom:2px;}
+  .lesson-card-body strong:first-child{margin-top:0;}
+  .callout{border-radius:8px;padding:18px 22px;margin-top:20px;border-left:4px solid;}
+  .callout.sage{background:var(--sage-light);border-color:var(--sage);}
+  .callout-label{font-size:0.67rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:7px;color:var(--sage);}
+  .callout p{font-size:0.85rem;color:var(--mid);line-height:1.65;margin-top:4px;}
+  .in-progress-note{background:var(--sage-pale);border:1.5px solid var(--sage-light);border-left:4px solid var(--sage);border-radius:6px;padding:14px 18px;display:flex;gap:12px;align-items:flex-start;margin-top:16px;}
+  .in-progress-note p{font-size:0.82rem;color:var(--mid);line-height:1.6;}
+  .in-progress-note strong{color:var(--sage);}
+  .site-footer{margin-top:48px;padding:20px 48px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .footer-left{font-size:0.74rem;color:var(--muted);}
+  .footer-right{font-size:0.68rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;color:var(--sage);}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="nav">
+  <a href="index.html">← Back to Portfolio</a>
+  <span class="nav-sep">·</span>
+  <span class="nav-current">Raíces Curriculum</span>
+</div>
+<div class="hero">
+  <div class="hero-tag">Doctoral Research · Curriculum Development · Texas Tech University</div>
+  <div class="hero-title">Raíces: Rooted in Culture, Rising in Language</div>
+  <div class="hero-sub">Original SLAR Grade 4 Biliteracy Curriculum · TEKS Chapter 128 · ACTFL · CEFR · 2026–Present</div>
+</div>
+
+<div class="section-divider"><span style="color:var(--sage)">Project Overview</span></div>
+<div class="content-block">
+  <p class="mission-text">Raíces is an original, identity-centered biliteracy curriculum for Grade 4 dual language classrooms in South Texas — developed as doctoral research in Curriculum & Instruction: Language, Diversity & Literacy Studies at Texas Tech University. It is designed to <strong>center the linguistic and cultural identities of Mexican American and multilingual learners</strong> while building rigorous, TEKS-aligned Spanish language arts skills. Every unit integrates explicit language objectives, translanguaging supports, formative assessment, and SpEd/ELL differentiation — grounding practitioner design in scholarly inquiry.</p>
+  <div class="pill-row">
+    <span class="pill sage">TEKS Chapter 128</span>
+    <span class="pill teal">ACTFL Aligned</span>
+    <span class="pill forest">CEFR A1–B1</span>
+    <span class="pill amber">Identity-Centered Design</span>
+    <span class="pill plum">Translanguaging Pedagogy</span>
+    <span class="pill terra">Doctoral Research · TTU</span>
+    <span class="pill outline-sage">Original Anchor Text: El Partido</span>
+  </div>
+</div>
+
+<div class="section-divider"><span style="color:var(--sage)">Curriculum Scope — 7 Units</span></div>
+<div class="content-block">
+  <table class="unit-table">
+    <thead><tr><th>Unit</th><th>Title</th><th>Central Theme</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Unidad 1</td><td>Mi Lengua, Mi Identidad</td><td>Language identity, bilingualism as asset, community voice</td><td><span class="badge complete">Semana 1 Complete</span></td></tr>
+      <tr><td>Unidad 2</td><td>Mis Raíces, Mi Historia</td><td>Family history, intergenerational memory, oral tradition</td><td><span class="badge inprog">In Development</span></td></tr>
+      <tr><td>Unidad 3</td><td>Mi Comunidad, Mi Mundo</td><td>Community systems, advocacy, civic participation</td><td><span class="badge planned">Planned</span></td></tr>
+      <tr><td>Unidad 4</td><td>La Naturaleza Nos Habla</td><td>Environment, science literacy in Spanish, land stewardship</td><td><span class="badge planned">Planned</span></td></tr>
+      <tr><td>Unidad 5</td><td>Creadores de Cambio</td><td>Changemakers, problem-solving, social entrepreneurship</td><td><span class="badge planned">Planned</span></td></tr>
+      <tr><td>Unidad 6</td><td>Voces que Perduran</td><td>Literature, author's craft, legacy and cultural preservation</td><td><span class="badge planned">Planned</span></td></tr>
+      <tr><td>Unidad 7</td><td>Somos el Futuro</td><td>Identity synthesis, biliteracy goals, future self-authoring</td><td><span class="badge planned">Planned</span></td></tr>
+    </tbody>
+  </table>
+  <div class="in-progress-note">
+    <div style="font-size:1.3rem;line-height:1;padding-top:2px;">📚</div>
+    <p><strong>Supporting Text Library — In Progress.</strong> Each unit anchors instruction in an original text authored by M. Jiménez, ensuring full copyright ownership. <em>El Partido</em> serves as the Unit 1 anchor text across all Semana 1 lessons. A curated supporting library of bilingual and bicultural mentor texts — selected for thematic alignment, linguistic accessibility, and cultural specificity — is in active development alongside each unit.</p>
+  </div>
+</div>
+
+<div class="section-divider"><span style="color:var(--sage)">5-Step Lesson Micro-Framework</span></div>
+<div class="content-block">
+  <div class="phase-row">
+    <div class="phase-item"><div class="phase-label ph1"><div class="phase-name">Conectar</div><div class="phase-tag">10 min</div></div><div class="phase-body"><strong>Activate prior knowledge and cultural connection.</strong> Students connect the day's theme to lived experience through a culturally grounded provocation — honoring home language, family stories, and community knowledge as academic assets.</div></div>
+    <div class="phase-item"><div class="phase-label ph2"><div class="phase-name">Caja de Herramientas</div><div class="phase-tag">10 min</div></div><div class="phase-body"><strong>Language tools and metalinguistic focus.</strong> Explicit language objective introduced with function label (Narrar · Clasificar · Sintetizar). Sentence plantillas modeled. Vocabulary discovered in context through <em>El Partido</em> — never pre-taught.</div></div>
+    <div class="phase-item"><div class="phase-label ph3"><div class="phase-name">Explorar</div><div class="phase-tag">20 min</div></div><div class="phase-body"><strong>Deep engagement with anchor text.</strong> Structured reading, listening (TEKS 4.1A audio), and discussion tasks. Tiered questioning scaffolds access for emergent bilinguals and SpEd students without reducing rigor.</div></div>
+    <div class="phase-item"><div class="phase-label ph4"><div class="phase-name">Crear</div><div class="phase-tag">15 min</div></div><div class="phase-body"><strong>Language production with purpose.</strong> Students use plantillas and lesson vocabulary to produce original written or oral text. Translanguaging is strategically planned — not permissive code-switching — with explicit ACTFL proficiency goals.</div></div>
+    <div class="phase-item"><div class="phase-label ph5"><div class="phase-name">Compartir</div><div class="phase-tag">5 min</div></div><div class="phase-body"><strong>Community knowledge-building and formative assessment.</strong> Students share with partners or class; teacher uses exit observation protocol. Data informs next-day differentiation without adding grading load.</div></div>
+  </div>
+</div>
+
+<div class="section-divider"><span style="color:var(--sage)">Semana 1 — Three Lessons Built</span></div>
+<div class="content-block">
+  <div class="lesson-snapshot">
+    <div class="lesson-card">
+      <div class="lesson-card-header lh-l1">Lección 1 — ¿Quién soy yo?</div>
+      <div class="lesson-card-body">
+        <strong>Language Objective</strong>Yo puedo <em>narrar</em> aspectos importantes de mi identidad usando detalles específicos.
+        <strong>Anchor Text</strong><em>El Partido</em> — Capítulo 1 <span style="display:inline-block;margin-left:4px;font-size:0.62rem;font-weight:700;background:var(--sage);color:white;padding:1px 6px;border-radius:8px;">Original · M. Jiménez</span>
+        <strong>Función Lingüística</strong>Narrar
+        <strong>Exit Assessment</strong>Boleto de Salida: Una parte importante de mi identidad es ___
+      </div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-card-header lh-l2">Lección 2 — Mi lengua, mi poder</div>
+      <div class="lesson-card-body">
+        <strong>Language Objective</strong>Yo puedo <em>clasificar</em> las lenguas que uso y explicar cuándo y por qué las uso.
+        <strong>Anchor Text</strong><em>El Partido</em> — Capítulo 2 <span style="display:inline-block;margin-left:4px;font-size:0.62rem;font-weight:700;background:var(--sage);color:white;padding:1px 6px;border-radius:8px;">Original · M. Jiménez</span>
+        <strong>Función Lingüística</strong>Clasificar
+        <strong>Exit Assessment</strong>Yo uso el español cuando ___ porque ___
+      </div>
+    </div>
+    <div class="lesson-card">
+      <div class="lesson-card-header lh-l3">Lección 3 — Mis palabras importan</div>
+      <div class="lesson-card-body">
+        <strong>Language Objective</strong>Yo puedo <em>sintetizar</em> lo que aprendí sobre mi identidad lingüística.
+        <strong>Anchor Text</strong><em>El Partido</em> — síntesis + student texts as anchor <span style="display:inline-block;margin-left:4px;font-size:0.62rem;font-weight:700;background:var(--sage);color:white;padding:1px 6px;border-radius:8px;">Original · M. Jiménez</span>
+        <strong>Función Lingüística</strong>Sintetizar
+        <strong>Exit Assessment</strong>Párrafo de Identidad — 3 párrafos completos
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider"><span style="color:var(--sage)">Embedded MLL Design Features</span></div>
+<div class="content-block">
+  <div class="two-col">
+    <ul class="feature-list dot-sage">
+      <li>Explicit language objectives with linguistic function labels (Narrar · Conectar · Clasificar · Explicar · Sintetizar · Argumentar) escalating across the week</li>
+      <li>SpEd AND ELL Emergent differentiation written separately — graphic organizers, oral response options, L1 use explicitly permitted</li>
+      <li>Puente de Biliteracidad in every lesson: active cognates named aloud, cross-linguistic transfer made explicit (nombre → name · identidad → identity)</li>
+      <li>TEKS 4.1(A) addressed in every lesson through integrated audio listening activity inside Explorar</li>
+    </ul>
+    <ul class="feature-list dot-plum">
+      <li>Trauma-informed teacher notes anticipating emotional content before students encounter it — names, family stories, identity, possible shame or pride</li>
+      <li>Maestro Dice scripted language with bracketed coaching cues — supports implementation fidelity without removing teacher voice</li>
+      <li>Observation protocols built into every phase — Qué Escuchar indicators tell teachers what to listen for, not just what to assign</li>
+      <li>Vocabulary sequencing across lessons: each word introduced as Nueva, then Revisión — L3+ words withheld until appropriate</li>
+    </ul>
+  </div>
+</div>
+
+<div class="content-block">
+  <div class="callout sage">
+    <div class="callout-label">What This Work Demonstrates</div>
+    <p>Raíces is a complete curriculum development project — authored, architected, and sequenced from scratch, with every design decision documented and defensible. It demonstrates the full range of curriculum work: writing and revising instructional materials for coherence and level-appropriateness, building scope and sequence across a multi-unit program, embedding evidence-generation structures (formative assessment, observation protocols), and centering community and cultural identity as a non-negotiable program value. The doctoral research context means every decision is tied to the scholarly literature — the foundation for grant reporting, program evaluation, and impact communication.</p>
+  </div>
+</div>
+
+<div class="site-footer">
+  <div class="footer-left">Mariana Jiménez, M.Ed. · jimenez_m90@outlook.com · marianajimenzedu.com</div>
+  <div class="footer-right">Ph.D. Doctoral Research · Texas Tech University · 2026</div>
+</div>
+</div>
+</body>
+</html>
